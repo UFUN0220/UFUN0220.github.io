@@ -4,47 +4,120 @@
   
     
     <entry>
-      <title>第一篇文章</title>
-      <link href="/2024/01/26/first/"/>
-      <url>/2024/01/26/first/</url>
+      <title>hexo d后Spawn failed报错解决方案</title>
+      <link href="/2024/01/29/hexo-d%E5%90%8Espawn-failed%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+      <url>/2024/01/29/hexo-d%E5%90%8Espawn-failed%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
       
-        <content type="html"><![CDATA[<h2 id="第一章还没开始写"><a href="#第一章还没开始写" class="headerlink" title="第一章还没开始写"></a>第一章还没开始写</h2><p>这是要写的内容<br>我还没写捏</p><hr><h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>这也是要写的内容<br>也还没写呢</p><hr>]]></content>
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>关于hexo搭建个人博客的教程，已经比较完备，感兴趣的可按网上资料自己动手搭建。</p><p>不需要任何编程基础，便可得到一个简洁优质的个人博客框架。</p><h2 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息"></a>报错信息</h2><p>按现有大多数教程，前面步骤均没什么问题。最后在部署到远端，即执行hexo d后，可能会出现spawn failed错误。</p><pre><code>sh-3.2# hexo d</code></pre><p>遇到的报错信息如下：</p><pre><code>INFO  Validating configINFO  Deploying: gitINFO  Clearing .deploy_git folder...INFO  Copying files from public folder...INFO  Copying files from extend dirs...On branch mainnothing to commit, working tree cleanUsername for &#39;https://github.com&#39;: UFUN0220Password for &#39;https://UFUN0220@github.com&#39;:remote: Support for password authentication was removed on August 13, 2021.remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.fatal: Authentication failed for &#39;https://github.com/UFUN0220/UFUN0220.github.io.git/&#39;FATAL Something&#39;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.htmlError: Spawn failedat ChildProcess.&lt;anonymous&gt; (/Users/fun0402/blog/node_modules/.store/hexo-util@2.7.0/node_modules/hexo-util/lib/spawn.js:51:21)at ChildProcess.emit (node:events:518:28)at ChildProcess._handle.onexit (node:internal/child_process:294:12)</code></pre><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>从2021年8月13日开始，GitHub移除了对密码认证的支持。现在推荐使用其他认证方式，如使用SSH密钥进行认证。</p><h2 id="两个方法"><a href="#两个方法" class="headerlink" title="两个方法"></a>两个方法</h2><ol><li><p>使用SSH密钥进行认证：首先，需要在本地生成一个 SSH 密钥对，并将公钥添加到GitHub 账户中。然后，在 Hexo 的配置文件中更新远程仓库的URL为SSH URL。这样就可以使用SSH密钥进行认证了。</p></li><li><p>使用个人访问令牌（Personal Access Token）进行认证：可以在GitHub的设置中生成一个个人访问令牌，然后将其用作密码来进行认证。在Hexo的配置文件中，将远程仓库的URL更新为使用个人访问令牌进行认证的URL。</p></li></ol><h2 id="我的解决方案"><a href="#我的解决方案" class="headerlink" title="我的解决方案"></a>我的解决方案</h2><p>我使用第二个方法（token），在配置文件的这个位置修改。</p><pre><code>deploy:  type: git  repo: https://&#39;这里替换成你的token&#39;@github.com/UFUN0220/UFUN0220.github.io.git  branch: master</code></pre><p> type和branch不用改，在repo字段的位置，直接复制你的token就可以了。</p><h2 id="token生成"><a href="#token生成" class="headerlink" title="token生成"></a>token生成</h2><p>不难，网上教程很多。</p><p>注意事项：</p><ol><li>github官方不推荐expiration选择no expiration,不过我个人推荐。</li><li>勾选项只勾repo就够了，我全选上好像也没什么用。</li><li>有其他问题欢迎随时私信我：）</li></ol>]]></content>
       
       
       
-    </entry>
-    
-    
-  
-  
-    
-    
-    <entry>
-      <title>关于</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
       
     </entry>
     
     
     
     <entry>
-      <title>link</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
+      <title>垃圾桶</title>
+      <link href="/2024/01/29/01-fun/"/>
+      <url>/2024/01/29/01-fun/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="图床的事儿"><a href="#图床的事儿" class="headerlink" title="图床的事儿"></a>图床的事儿</h2><p>当前选择上传图片方法：github图床</p><p>我不满意。看了一圈，好用的图床都收费。</p><p>picgo刚才简单配了下，最后验证不通过，log里很多内容我一下没看明白，就直接github新建repo了。</p><p>主要我博客图片需求不大，网站性能也有很多值得提升的地方。</p><p>然后，大佬们弄的各种魔改看的人眼花缭乱，头皮发麻。</p><!-- ![图片标签](https://raw.githubusercontent.com/UFUN0220/pic-bed/main/444.webp) -->]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> general </tag>
+            
+        </tags>
       
     </entry>
     
+    
+    
+    <entry>
+      <title>UFUN-Blog</title>
+      <link href="/2024/01/28/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%86%85%E5%AE%B9%E6%9B%B4%E6%96%B0%E6%96%B9%E5%90%91/"/>
+      <url>/2024/01/28/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%86%85%E5%AE%B9%E6%9B%B4%E6%96%B0%E6%96%B9%E5%90%91/</url>
+      
+        <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>个人博客，风格随意，主观性强。</p><p>欢迎随时私信骚扰我，我一般秒回消息，没回是没看手机。</p><p>这个站就图一乐，可能会突然断更好久…</p><hr><h2 id="1-毕设学习笔记"><a href="#1-毕设学习笔记" class="headerlink" title="1.毕设学习笔记"></a>1.毕设学习笔记</h2><p>毕设做基于公共区块链的系统，刚开始学习，准备先发区块链学习笔记。</p><p>框架打算用C#.NET framework<br>大三上课学的这个，我导说.net就更复杂了.<br>再就是自己摸索了fabric,fisco-bcos,工程量太大，太难了不想学了，我是fw。</p><hr><h2 id="2-课设"><a href="#2-课设" class="headerlink" title="2.课设"></a>2.课设</h2><p>想过把本科做过的一些课设实现过程记录到博客上，不过现在有其他事情忙，先搁置吧。</p><p>适合的今后有可能发的：</p><p>入侵防御技术及应用课设：系统文件监控系统的设计（c++)</p><p>信息内容安全课设：web解析器与过滤器的设计（python)</p><p>CPS技术与创客实践课程：基于Arduino的云平台智能智能浇花机器人控制系统（阿里云物联网平台部分，微信开发者工具部分）</p><hr><p>难度稍微高点的就不发了，因为我做完了也不大明白。还有信息论等课程奇怪的课设，我分数不到80分，就不误人子弟了。</p><p>24.1月刚刚做的一个课设题目是“金融机构身份认证与访问控制方案”，刚考完研我在颓废，我们本打算用以前做过的基于TCP的C&#x2F;S系统稍微改改，结果开题被老师狠狠拷打😭，他说方向错了，想让我们写智能合约那种…但是一个周做出来太赶了，我就想赶紧回家玩，就没理老师，最后还是抱舍友大腿🐶</p><p>平行选题是：模拟或实战漏洞扫描和渗透测试，给改进建议和应急响应方案；网络安全系统方案，防御恶意软件、DDoS 攻击和数据泄露。</p><p>我觉得好难:（</p><p>每次课设都是好多选题，我基本都选看起来最简单最省事的，并且实现过程中舍友帮了我很多😭，真的很感谢我的好舍友😭</p><hr><h2 id="3-看心情想发啥发啥：）"><a href="#3-看心情想发啥发啥：）" class="headerlink" title="3.看心情想发啥发啥：）"></a>3.看心情想发啥发啥：）</h2><p>数码产品推荐，游戏笔记之类的（现在主要在学文明6）</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> general </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>繁花🌺</title>
+      <link href="/2024/01/28/%E7%B9%81%E8%8A%B1/"/>
+      <url>/2024/01/28/%E7%B9%81%E8%8A%B1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="繁花挺好看的"><a href="#繁花挺好看的" class="headerlink" title="繁花挺好看的"></a>繁花挺好看的</h2><p>想白天和汪小姐恋爱，晚上被李李睡，玲子开店养我，雪芝一路走好。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> free </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>带专一战24东南电子信息失败经验</title>
+      <link href="/2024/01/28/%E5%B8%A6%E4%B8%93%E4%B8%80%E6%88%9824%E4%B8%9C%E5%8D%97%E7%94%B5%E5%AD%90%E4%BF%A1%E6%81%AF%E5%A4%B1%E8%B4%A5%E7%BB%8F%E9%AA%8C/"/>
+      <url>/2024/01/28/%E5%B8%A6%E4%B8%93%E4%B8%80%E6%88%9824%E4%B8%9C%E5%8D%97%E7%94%B5%E5%AD%90%E4%BF%A1%E6%81%AF%E5%A4%B1%E8%B4%A5%E7%BB%8F%E9%AA%8C/</url>
+      
+        <content type="html"><![CDATA[<h2 id="序"><a href="#序" class="headerlink" title="序"></a>序</h2><p>致谢先写在前面</p><p>非常非常感谢本校19级几位学长及考研东网过程中认识的所有好朋友们对我莫大的帮助与支持。</p><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>会写的会写的。<br>我先去玩会文明6。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> public </tag>
+            
+            <tag> SEU </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
     
     
     <entry>
       <title>关于</title>
       <link href="/movies/index.html"/>
       <url>/movies/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -64,9 +137,20 @@
     
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>关于</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>link</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
