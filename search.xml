@@ -42,17 +42,19 @@
     
     
     <entry>
-      <title>UFUN-Blog</title>
-      <link href="/2024/01/28/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%86%85%E5%AE%B9%E6%9B%B4%E6%96%B0%E6%96%B9%E5%90%91/"/>
-      <url>/2024/01/28/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%86%85%E5%AE%B9%E6%9B%B4%E6%96%B0%E6%96%B9%E5%90%91/</url>
+      <title>带专一战24东南电子信息失败经验</title>
+      <link href="/2024/01/29/%E5%B8%A6%E4%B8%93%E4%B8%80%E6%88%9824%E4%B8%9C%E5%8D%97%E7%94%B5%E5%AD%90%E4%BF%A1%E6%81%AF%E5%A4%B1%E8%B4%A5%E7%BB%8F%E9%AA%8C/"/>
+      <url>/2024/01/29/%E5%B8%A6%E4%B8%93%E4%B8%80%E6%88%9824%E4%B8%9C%E5%8D%97%E7%94%B5%E5%AD%90%E4%BF%A1%E6%81%AF%E5%A4%B1%E8%B4%A5%E7%BB%8F%E9%AA%8C/</url>
       
-        <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>个人博客，风格随意，主观性强。</p><p>欢迎随时私信骚扰我，我一般秒回消息，没回是没看手机。</p><p>这个站就图一乐，可能会突然断更好久…</p><hr><h2 id="1-毕设学习笔记"><a href="#1-毕设学习笔记" class="headerlink" title="1.毕设学习笔记"></a>1.毕设学习笔记</h2><p>毕设做基于公共区块链的系统，刚开始学习，准备先发区块链学习笔记。</p><p>框架打算用C#.NET framework<br>大三上课学的这个，我导说.net就更复杂了.<br>再就是自己摸索了fabric,fisco-bcos,工程量太大，太难了不想学了，我是fw。</p><hr><h2 id="2-课设"><a href="#2-课设" class="headerlink" title="2.课设"></a>2.课设</h2><p>想过把本科做过的一些课设实现过程记录到博客上，不过现在有其他事情忙，先搁置吧。</p><p>适合的今后有可能发的：</p><p>入侵防御技术及应用课设：系统文件监控系统的设计（c++)</p><p>信息内容安全课设：web解析器与过滤器的设计（python)</p><p>CPS技术与创客实践课程：基于Arduino的云平台智能智能浇花机器人控制系统（阿里云物联网平台部分，微信开发者工具部分）</p><hr><p>难度稍微高点的就不发了，因为我做完了也不大明白。还有信息论等课程奇怪的课设，我分数不到80分，就不误人子弟了。</p><p>24.1月刚刚做的一个课设题目是“金融机构身份认证与访问控制方案”，刚考完研我在颓废，我们本打算用以前做过的基于TCP的C&#x2F;S系统稍微改改，结果开题被老师狠狠拷打😭，他说方向错了，想让我们写智能合约那种…但是一个周做出来太赶了，我就想赶紧回家玩，就没理老师，最后还是抱舍友大腿🐶</p><p>平行选题是：模拟或实战漏洞扫描和渗透测试，给改进建议和应急响应方案；网络安全系统方案，防御恶意软件、DDoS 攻击和数据泄露。</p><p>我觉得好难:（</p><p>每次课设都是好多选题，我基本都选看起来最简单最省事的，并且实现过程中舍友帮了我很多😭，真的很感谢我的好舍友😭</p><hr><h2 id="3-看心情想发啥发啥：）"><a href="#3-看心情想发啥发啥：）" class="headerlink" title="3.看心情想发啥发啥：）"></a>3.看心情想发啥发啥：）</h2><p>数码产品推荐，游戏笔记之类的（现在主要在学文明6）</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="序"><a href="#序" class="headerlink" title="序"></a>序</h2><p>致谢先写在前面</p><p>非常非常感谢本校19级几位学长及考研东网过程中认识的所有好朋友们对我莫大的帮助与支持。</p><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>会写的会写的。<br>我先去玩会文明6。</p>]]></content>
       
       
       
         <tags>
             
-            <tag> general </tag>
+            <tag> public </tag>
+            
+            <tag> SEU </tag>
             
         </tags>
       
@@ -80,19 +82,17 @@
     
     
     <entry>
-      <title>带专一战24东南电子信息失败经验</title>
-      <link href="/2024/01/28/%E5%B8%A6%E4%B8%93%E4%B8%80%E6%88%9824%E4%B8%9C%E5%8D%97%E7%94%B5%E5%AD%90%E4%BF%A1%E6%81%AF%E5%A4%B1%E8%B4%A5%E7%BB%8F%E9%AA%8C/"/>
-      <url>/2024/01/28/%E5%B8%A6%E4%B8%93%E4%B8%80%E6%88%9824%E4%B8%9C%E5%8D%97%E7%94%B5%E5%AD%90%E4%BF%A1%E6%81%AF%E5%A4%B1%E8%B4%A5%E7%BB%8F%E9%AA%8C/</url>
+      <title>UFUN-Blog</title>
+      <link href="/2024/01/28/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%86%85%E5%AE%B9%E6%9B%B4%E6%96%B0%E6%96%B9%E5%90%91/"/>
+      <url>/2024/01/28/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%86%85%E5%AE%B9%E6%9B%B4%E6%96%B0%E6%96%B9%E5%90%91/</url>
       
-        <content type="html"><![CDATA[<h2 id="序"><a href="#序" class="headerlink" title="序"></a>序</h2><p>致谢先写在前面</p><p>非常非常感谢本校19级几位学长及考研东网过程中认识的所有好朋友们对我莫大的帮助与支持。</p><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>会写的会写的。<br>我先去玩会文明6。</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>个人博客，风格随意，主观性强。</p><p>欢迎随时私信骚扰我，我一般秒回消息，没回是没看手机。</p><p>这个站就图一乐，可能会突然断更好久…</p><hr><h2 id="1-毕设学习笔记"><a href="#1-毕设学习笔记" class="headerlink" title="1.毕设学习笔记"></a>1.毕设学习笔记</h2><p>毕设做基于公共区块链的系统，刚开始学习，准备先发区块链学习笔记。</p><p>框架打算用C#.NET framework<br>大三上课学的这个，我导说.net就更复杂了.<br>再就是自己摸索了fabric,fisco-bcos,工程量太大，太难了不想学了，我是fw。</p><hr><h2 id="2-课设"><a href="#2-课设" class="headerlink" title="2.课设"></a>2.课设</h2><p>想过把本科做过的一些课设实现过程记录到博客上，不过现在有其他事情忙，先搁置吧。</p><p>适合的今后有可能发的：</p><p>入侵防御技术及应用课设：系统文件监控系统的设计（c++)</p><p>信息内容安全课设：web解析器与过滤器的设计（python)</p><p>CPS技术与创客实践课程：基于Arduino的云平台智能智能浇花机器人控制系统（阿里云物联网平台部分，微信开发者工具部分）</p><hr><p>难度稍微高点的就不发了，因为我做完了也不大明白。还有信息论等课程奇怪的课设，我分数不到80分，就不误人子弟了。</p><p>24.1月刚刚做的一个课设题目是“金融机构身份认证与访问控制方案”，刚考完研我在颓废，我们本打算用以前做过的基于TCP的C&#x2F;S系统稍微改改，结果开题被老师狠狠拷打😭，他说方向错了，想让我们写智能合约那种…但是一个周做出来太赶了，我就想赶紧回家玩，就没理老师，最后还是抱舍友大腿🐶</p><p>平行选题是：模拟或实战漏洞扫描和渗透测试，给改进建议和应急响应方案；网络安全系统方案，防御恶意软件、DDoS 攻击和数据泄露。</p><p>我觉得好难:（</p><p>每次课设都是好多选题，我基本都选看起来最简单最省事的，并且实现过程中舍友帮了我很多😭，真的很感谢我的好舍友😭</p><hr><h2 id="3-看心情想发啥发啥：）"><a href="#3-看心情想发啥发啥：）" class="headerlink" title="3.看心情想发啥发啥：）"></a>3.看心情想发啥发啥：）</h2><p>数码产品推荐，游戏笔记之类的（现在主要在学文明6）</p>]]></content>
       
       
       
         <tags>
             
-            <tag> public </tag>
-            
-            <tag> SEU </tag>
+            <tag> general </tag>
             
         </tags>
       
@@ -126,6 +126,17 @@
     
     
     <entry>
+      <title>link</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>关于</title>
       <link href="/music/index.html"/>
       <url>/music/index.html</url>
@@ -140,17 +151,6 @@
       <title>关于</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>link</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
