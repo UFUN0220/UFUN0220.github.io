@@ -4,9 +4,85 @@
   
     
     <entry>
+      <title>26.删除有序数组中的重复项</title>
+      <link href="/2024/03/23/26/"/>
+      <url>/2024/03/23/26/</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个 <strong>非严格递增排列</strong> 的数组 <code>nums</code> ，请你**<a href="http://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95"> 原地</a>** 删除重复出现的元素，使每个元素 <strong>只出现一次</strong> ，返回删除后数组的新长度。元素的 <strong>相对顺序</strong> 应该保持 <strong>一致</strong> 。然后返回 <code>nums</code> 中唯一元素的个数。</p><p>考虑 <code>nums</code> 的唯一元素的数量为 <code>k</code> ，你需要做以下事情确保你的题解可以被通过：</p><ul><li><p>更改数组 <code>nums</code> ，使 <code>nums</code> 的前 <code>k</code> 个元素包含唯一元素，并按照它们最初在 <code>nums</code> 中出现的顺序排列。<code>nums</code> 的其余元素与 <code>nums</code> 的大小不重要。</p></li><li><p>返回 <code>k</code> 。</p><p><strong>判题标准:</strong></p><p>系统会用下面的代码来测试你的题解:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">int[] nums = [...]; // 输入数组</span><br><span class="line">int[] expectedNums = [...]; // 长度正确的期望答案</span><br><span class="line"></span><br><span class="line">int k = removeDuplicates(nums); // 调用</span><br><span class="line"></span><br><span class="line">assert k == expectedNums.length;</span><br><span class="line">for (int i = 0; i &lt; k; i++) &#123;</span><br><span class="line">    assert nums[i] == expectedNums[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>如果所有断言都通过，那么您的题解将被 <strong>通过</strong>。</p><p><strong>示例 1：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [1,1,2]</span><br><span class="line">输出：2, nums = [1,2,_]</span><br><span class="line">解释：函数应该返回新的长度 2 ，并且原数组 nums 的前两个元素被修改为 1, 2 。不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [0,0,1,1,1,2,2,3,3,4]</span><br><span class="line">输出：5, nums = [0,1,2,3,4]</span><br><span class="line">解释：函数应该返回新的长度 5 ， 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4 。不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure><p><strong>提示：</strong></p><ul><li><p><code>1 &lt;= nums.length &lt;= 3 * 104</code></p></li><li><p><code>-104 &lt;= nums[i] &lt;= 104</code></p></li><li><p><code>nums</code> 已按 <strong>非严格递增</strong> 排列</p></li></ul></li></ul><h2 id="C-代码"><a href="#C-代码" class="headerlink" title="C++代码"></a>C++代码</h2><pre><code>第一遍写的时候忘记边界条件了，运行时通过，提交时报溢出。要注意数组本身越界问题。</code></pre><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int removeDuplicates(vector&lt;int&gt;&amp; nums) &#123;</span><br><span class="line">        int slow=0,fast=0;</span><br><span class="line">        int size=nums.size();</span><br><span class="line">        for (fast=0;fast&lt;size;fast++)&#123;</span><br><span class="line">            if (fast==size-1||nums[fast]!=nums[fast+1])&#123;</span><br><span class="line">                nums[slow]=nums[fast];</span><br><span class="line">                slow++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return slow;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>27.移除元素</title>
+      <link href="/2024/03/23/27/"/>
+      <url>/2024/03/23/27/</url>
+      
+        <content type="html"><![CDATA[<p>vector的erase函数，时间复杂度为O(n)。</p><p>如果题目可以用一行库函数做出来，不要用库函数。</p><p>如果用库函数做一个步骤，且我们知道库函数的内部实现过程以及时间复杂度，可以用。</p><p>快指针获取新数组中的元素，慢指针获取需要更新的位置。</p><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个数组 <code>nums</code> 和一个值 <code>val</code>，你需要 <strong><a href="https://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95">原地</a></strong> 移除所有数值等于 <code>val</code> 的元素，并返回移除后数组的新长度。</p><p>不要使用额外的数组空间，你必须仅使用 <code>O(1)</code> 额外空间并 <strong><a href="https://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95">原地 </a>修改输入数组</strong>。</p><p>元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。</p><h2 id="C-代码"><a href="#C-代码" class="headerlink" title="C++代码"></a>C++代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">removeElement</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> slow = <span class="number">0</span>, fast = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> size = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span> (fast = <span class="number">0</span>; fast &lt; size; fast++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[fast] != val) &#123;</span><br><span class="line">                nums[slow] = nums[fast];</span><br><span class="line">                slow++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> slow;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>283.移动零</title>
+      <link href="/2024/03/23/283/"/>
+      <url>/2024/03/23/283/</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个数组 <code>nums</code>，编写一个函数将所有 <code>0</code> 移动到数组的末尾，同时保持非零元素的相对顺序。</p><p><strong>请注意</strong> ，必须在不复制数组的情况下原地对数组进行操作。</p><p><strong>示例 1:</strong></p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: nums = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="number">12</span>]</span><br><span class="line">输出: [<span class="number">1</span>,<span class="number">3</span>,<span class="number">12</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br></pre></td></tr></table></figure><p><strong>示例 2:</strong></p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: nums = [<span class="number">0</span>]</span><br><span class="line">输出: [<span class="number">0</span>]</span><br></pre></td></tr></table></figure><h2 id="C-代码"><a href="#C-代码" class="headerlink" title="C++代码"></a>C++代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">moveZeroes</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> fast=<span class="number">0</span>,slow=<span class="number">0</span>,i=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> size=nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span> (fast=<span class="number">0</span>;fast&lt;size;fast++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[fast]!=<span class="number">0</span>)&#123;</span><br><span class="line">                nums[slow]=nums[fast];</span><br><span class="line">                slow++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (i=slow;i&lt;size;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            nums[i]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>704.二分查找</title>
+      <link href="/2024/03/23/704/"/>
+      <url>/2024/03/23/704/</url>
+      
+        <content type="html"><![CDATA[<h2 id="数组基础知识"><a href="#数组基础知识" class="headerlink" title="数组基础知识"></a>数组基础知识</h2><p>数组是存放在连续内存空间上的相同类型数据的集合。</p><ul><li><strong>数组下标都是从0开始的。</strong></li><li>数组内存空间的地址是连续的</li></ul><p>数组的元素是不能删的，只能覆盖。</p><p>给定一个 <code>n</code> 个元素有序的（升序）整型数组 <code>nums</code> 和一个目标值 <code>target</code> ，写一个函数搜索 <code>nums</code> 中的 <code>target</code>，如果目标值存在返回下标，否则返回 <code>-1</code>。</p><p><strong>示例 1:</strong></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: nums = [<span class="number">-1</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">12</span>], target = <span class="number">9</span></span><br><span class="line">输出: <span class="number">4</span></span><br><span class="line">解释: <span class="number">9</span> 出现在 nums 中并且下标为 <span class="number">4</span></span><br></pre></td></tr></table></figure><p><strong>示例 2:</strong></p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: nums = [<span class="number">-1</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">12</span>], target = <span class="number">2</span></span><br><span class="line">输出: <span class="number">-1</span></span><br><span class="line">解释: <span class="number">2</span> 不存在 nums 中因此返回 <span class="number">-1</span></span><br></pre></td></tr></table></figure><h2 id="C-代码"><a href="#C-代码" class="headerlink" title="C++代码"></a>C++代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">search</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> left=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> right= nums.<span class="built_in">size</span>()<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(left&lt;=right)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> mid= (left+right)/<span class="number">2</span> ; <span class="comment">//或mid=left + ((right - left) / 2); 防止溢出</span></span><br><span class="line">            <span class="keyword">if</span> (target&gt;nums[mid])</span><br><span class="line">            &#123;</span><br><span class="line">                left=mid+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (target &lt; nums[mid])</span><br><span class="line">            &#123;</span><br><span class="line">                right=mid<span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>开题报告</title>
-      <link href="/2024/02/28/%E5%BC%80%E9%A2%98%E6%8A%A5%E5%91%8A/"/>
-      <url>/2024/02/28/%E5%BC%80%E9%A2%98%E6%8A%A5%E5%91%8A/</url>
+      <link href="/2024/02/28/start-2-28/"/>
+      <url>/2024/02/28/start-2-28/</url>
       
         <content type="html"><![CDATA[<h1 id="基于公共区块链的证件保存管理系统的设计与实现"><a href="#基于公共区块链的证件保存管理系统的设计与实现" class="headerlink" title="基于公共区块链的证件保存管理系统的设计与实现"></a>基于公共区块链的证件保存管理系统的设计与实现</h1><h2 id="1-2-国内外研究情况"><a href="#1-2-国内外研究情况" class="headerlink" title="1.2 国内外研究情况"></a>1.2 国内外研究情况</h2><p>近年来, 国内外许多研究人员和机构运用区块链技术在存储系统和文件存储领域进行一些探索与实践。</p><h3 id="1-2-1-国外研究现状"><a href="#1-2-1-国外研究现状" class="headerlink" title="1.2.1  国外研究现状"></a>1.2.1  国外研究现状</h3><p>国外方面，2013年, Araoz等人创立了Proof of Existence项目, 通过将哈希值存储到区块链交易OP_RETURN字段的方法, 帮助用户证明某个文件在特定时间点存在，实现了电子文件的真实性保护。Vaughan等人提出了Chainpoint项目, 实现了基于区块链技术的时间戳方案, 该方案计算文件哈希值并以此构建Merkle Tree, 支持多种区块链平台。<br>2020年，Raghavendra K Marangappanavar等人提出了一个实现去中心化隐私保护的区块链基础PHR共享机制的架构，结合了IPFS等技术，使用智能合约和访问控制机制来有效地保护数据，这些数据可以在患者许可的情况下共享。系统本质上是一个多访问系统，记录由医疗提供者单独维护。2021年，Kumar等人提出一种基于IPFS的去中心化点对点图像和视频共享平台，利用区块链技术来检测版权侵犯。使用感知哈希（pHash）技术来检测多媒体内容的版权侵犯。2021年，Xingyu Tao, Moumita Das等人提出了一个利用区块链和IPFS的分布式共同数据环境（DCDE）框架，以解决BIM设计中大型文件存储问题。DCDE框架通过区块链保证设计变更的不可逆存储，同时通过IPFS安全地存储设计文件，框架内还开发了一个区块链交易数据模型和智能合约来支持DCDE的功能。</p><h3 id="1-2-2-国内研究现状"><a href="#1-2-2-国内研究现状" class="headerlink" title="1.2.2  国内研究现状"></a>1.2.2  国内研究现状</h3><p>国内方面，2019年，中科院的谭海波、周桐等人提出了一种基于区块链的档案数据保护与共享方法。通过智能合约和数字签名技术实现档案馆身份认证和档案所有权确认；通过智能合约和IPFS技术实现档案的保护、验证、恢复与共享；结合公有链与联盟链降低经济成本，同时保障数据安全性和提高可扩展性。2020年，Huawei Huang, Jianru Lin等人讨论了新一代基于区块链的分布式文件系统如IPFS和Swarm的最新研究，包括可扩展性和隐私问题，其具有激励机制、低延迟数据检索、自动化审计和抗审查等关键特性。2021年，Wei She, Lijuan Huo等人提出了结合了区块链和IPFS双重隐写模型，通过图像隐写安全地嵌入大量秘密信息到大文件中，并利用IPFS解决大文件的存储问题。模型利用纯文本隐写将大文件的哈希值嵌入纯文本文件中，便于传输。此外，模型在区块链中建立隐秘通道，保证传输的隐蔽性并保护秘密信息免受攻击。然而，模型在保证消息隐蔽性的同时，消息的实时性相对较低，且纯文本文件中原始数据的时序性限制了模型的应用范围。2022年，Peng Kang等人设计的基于NDN的区块链知识文件存储和共享模型，使用IPFS的分布式存储，实现了文件内容的安全高效存储。模型通过NDN网络解决了传统区块链系统中共享文件的移动性问题、数据包传输的双重确认和与区块链技术的融合问题，使文件共享过程更加高效。</p><h2 id="本课题研究的主要内容及方法"><a href="#本课题研究的主要内容及方法" class="headerlink" title="本课题研究的主要内容及方法"></a>本课题研究的主要内容及方法</h2><p>内容：<br>1.加密算法：开发加密函数，使用AES或其他对称加密算法，接收证件内容并对其进行加密处理；<br>2.数据处理：(1) 开发写入区块链函数，将加密后的数据写入区块链；(2) 开发读取区块链函数，从区块链上读取相应位置的加密数据；(3) 开发解密函数，使用与加密算法相同的加密秘钥来对读取的加密数据进行解密处理；(4) 在程序中显示解密后的内容，通过调用控件来进行展示。<br>3.安全措施：(1) 保护好密钥，不应明文存储；(2) 程序应防止非法访问和攻击。<br>4.界面设计：设计窗体界面，添加各类组件，窗体需要美观简洁，用户友好。</p><p>方法：<br>1.使用BSVSimpleLibrary、NBitcoin、DataEncoders、BitcoinSVCryptor等库操作区块链；<br>2.通过私钥对证件内容进行AES加密后将加密数据发送到BSV网络；<br>3.设计证件电子文档或图片的数据存储格式，将证件内容流化；<br>4.获取指定地址上的历史交易数据，并获取其opReturn数据；<br>5.解密opReturn数据，读取证件内容并输出；<br>6.使用C#进行可视化界面的设计与开发；</p><h2 id="本课题所需要解决的问题："><a href="#本课题所需要解决的问题：" class="headerlink" title="本课题所需要解决的问题："></a>本课题所需要解决的问题：</h2><p>1.设计直观易用的用户界面，简化用户在证件管理过程中的操作步骤，指引非技术用户安全地使用系统。<br>2.设计合适的证件电子文档或图片的数据存储格式。<br>3.如何在不违反用户隐私的前提下在区块链上存储证件数据。<br>4.区块链的存储成本较高，需要优化证件数据的存储方式。<br>5.确保系统遵循相关的法律法规，特别是与数据保护和隐私相关的规定。<br>6.安全地管理密钥，尤其是用户的私钥。</p><h2 id="预期结果及其意义："><a href="#预期结果及其意义：" class="headerlink" title="预期结果及其意义："></a>预期结果及其意义：</h2><p>1.开发一个可应用的基于公共区块链的证件保存管理系统；<br>2.掌握区块链的基本概念和开发思想；<br>3.掌握区块链的基本读写操作方法；<br>4.了解面向对象的开发思想；</p>]]></content>
       
@@ -18,8 +94,8 @@
     
     <entry>
       <title>hexo d后Spawn failed报错解决方案</title>
-      <link href="/2024/01/29/hexo-d%E5%90%8Espawn-failed%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-      <url>/2024/01/29/hexo-d%E5%90%8Espawn-failed%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+      <link href="/2024/01/29/hexo-error/"/>
+      <url>/2024/01/29/hexo-error/</url>
       
         <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>关于hexo搭建个人博客的教程，已经比较完备，感兴趣的可按网上资料自己动手搭建。</p><p>不需要任何编程基础，便可得到一个简洁优质的个人博客框架。</p><h2 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息"></a>报错信息</h2><p>按现有大多数教程，前面步骤均没什么问题。最后在部署到远端，即执行hexo d后，可能会出现spawn failed错误。</p><pre><code>sh-3.2# hexo d</code></pre><p>遇到的报错信息如下：</p><pre><code>INFO  Validating configINFO  Deploying: gitINFO  Clearing .deploy_git folder...INFO  Copying files from public folder...INFO  Copying files from extend dirs...On branch mainnothing to commit, working tree cleanUsername for &#39;https://github.com&#39;: UFUN0220Password for &#39;https://UFUN0220@github.com&#39;:remote: Support for password authentication was removed on August 13, 2021.remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.fatal: Authentication failed for &#39;https://github.com/UFUN0220/UFUN0220.github.io.git/&#39;FATAL Something&#39;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.htmlError: Spawn failedat ChildProcess.&lt;anonymous&gt; (/Users/fun0402/blog/node_modules/.store/hexo-util@2.7.0/node_modules/hexo-util/lib/spawn.js:51:21)at ChildProcess.emit (node:events:518:28)at ChildProcess._handle.onexit (node:internal/child_process:294:12)</code></pre><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>从2021年8月13日开始，GitHub移除了对密码认证的支持。现在推荐使用其他认证方式，如使用SSH密钥进行认证。</p><h2 id="两个方法"><a href="#两个方法" class="headerlink" title="两个方法"></a>两个方法</h2><ol><li><p>使用SSH密钥进行认证：首先，需要在本地生成一个 SSH 密钥对，并将公钥添加到GitHub 账户中。然后，在 Hexo 的配置文件中更新远程仓库的URL为SSH URL。这样就可以使用SSH密钥进行认证了。</p></li><li><p>使用个人访问令牌（Personal Access Token）进行认证：可以在GitHub的设置中生成一个个人访问令牌，然后将其用作密码来进行认证。在Hexo的配置文件中，将远程仓库的URL更新为使用个人访问令牌进行认证的URL。</p></li></ol><h2 id="我的解决方案"><a href="#我的解决方案" class="headerlink" title="我的解决方案"></a>我的解决方案</h2><p>我使用第二个方法（token），在配置文件的这个位置修改。</p><pre><code>deploy:  type: git  repo: https://&#39;这里替换成你的token&#39;@github.com/UFUN0220/UFUN0220.github.io.git  branch: master</code></pre><p> type和branch不用改，在repo字段的位置，直接复制你的token就可以了。</p><h2 id="token生成"><a href="#token生成" class="headerlink" title="token生成"></a>token生成</h2><p>不难，网上教程很多。</p><p>注意事项：</p><ol><li>github官方不推荐expiration选择no expiration,不过我个人推荐。</li><li>勾选项只勾repo就够了，我全选上好像也没什么用。</li></ol>]]></content>
       
@@ -37,8 +113,8 @@
     
     <entry>
       <title>垃圾桶</title>
-      <link href="/2024/01/29/01-fun/"/>
-      <url>/2024/01/29/01-fun/</url>
+      <link href="/2024/01/29/test/"/>
+      <url>/2024/01/29/test/</url>
       
         <content type="html"><![CDATA[<h2 id="图床的事儿"><a href="#图床的事儿" class="headerlink" title="图床的事儿"></a>图床的事儿</h2><p>当前选择上传图片方法：github图床</p><p>我不满意。看了一圈，好用的图床都收费。</p><p>picgo刚才简单配了下，最后验证不通过，log里很多内容我一下没看明白，就直接github新建repo了。</p><p>主要我博客图片需求不大，网站性能也有很多值得提升的地方。</p><!-- ![图片标签](https://raw.githubusercontent.com/UFUN0220/pic-bed/main/444.webp) -->]]></content>
       
@@ -69,9 +145,9 @@
     
     
     <entry>
-      <title>link</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
+      <title>关于</title>
+      <link href="/movies/index.html"/>
+      <url>/movies/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -91,9 +167,9 @@
     
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>link</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -102,9 +178,9 @@
     
     
     <entry>
-      <title>关于</title>
-      <link href="/movies/index.html"/>
-      <url>/movies/index.html</url>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
