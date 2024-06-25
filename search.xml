@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>致谢与答辩</title>
+      <link href="/2024/06/25/%E8%87%B4%E8%B0%A2/"/>
+      <url>/2024/06/25/%E8%87%B4%E8%B0%A2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>写致谢的时候，青岛有点凉，便喝了两斤散啤，暖暖胃。写完哥们就去睡觉了，第二天看，自我感觉良好，定稿就用这个了。GPT4也说写的不错，“作者用幽默的方式表达了豁达乐观与积极向上的情感”。</p><h2 id="答辩"><a href="#答辩" class="headerlink" title="答辩"></a>答辩</h2><p>答辩也有故事。我答辩完回宿舍，舍友问：“你答辩干啥了，他们说你“点燃”了系主任，你走之后开始拷打后面的“。哈哈哈我说哥们也被拷打了，没想到老师们还看致谢，然后主任说我态度问题说半天。</p><p>“你这写的也太潇洒了（微微皱眉）”，“这个要留档的。不是你写博客（开始生气）”，“你看你那倒数第二段最后4个字，我都不想提（十分生气）”…</p><p>因为我是很听话的乖孩子，所以我最终稿就把那4个字换成了：我很期待。</p><p>答辩前也有故事。在我答辩开始之前，我对我们组第一位同学的内容提出了质疑，因为是非常明显的错误。然后主任说，你就讲你的。哈哈，我就正常讲我的内容了，反正我不怕任何技术方面的质疑。因为我答辩时，看到她提前走了不在场，所以影响不大。就事论事，我对这同学印象很好，毕业典礼那天我们也说话来着。</p><p>实际上我对她的指导老师有意见，在我们开题答辩时，对我和我舍友提出了令我们匪夷所思的问题，我第一反应是，怎么行政老师也能参加答辩吗。这里不展开了。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> pre </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>2024最开心的事-给我导提bug</title>
+      <link href="/2024/06/25/bug/"/>
+      <url>/2024/06/25/bug/</url>
+      
+        <content type="html"><![CDATA[<h2 id="提bug"><a href="#提bug" class="headerlink" title="提bug"></a>提bug</h2><p>提bug的学生是这样的。导师只要把bug改好就可以，可是提bug的学生要考虑的事情就很多了。</p><p>2024最开心的事，毕业前给我导提了个bug，吵架还吵赢咯！</p><p>吵架是这样，我毕设有个功能要调我导写的包，但测试没过。我想，我写的代码可好了，你才写错嘞，然后就跟我导提。呃但他好像也是这么想的，就线上讨论了半天。</p><p>主要我当时不在学校，不然直接去他办公室5分钟就说明白了，是他的问题捏╲(｡◕‿◕｡)╱</p><p>我最早觉得，下班时间打扰导师不太好，都要休息嘛，就都工作时间给他发消息。但我后来发现他好像不下班哈哈哈，老凌晨给我发消息。上线0.2.3那天凌晨快一点了，说可以测。我就马上测了，结果还有很严重的bug，测完一点多了。当时哥们挺无助的，因为知道工作量很大，短时间内应该修复不了。我想，先放着吧，明天和我导提，这样只有我一个人睡不着。如果我马上和他提，可能我俩都睡不着了hhh</p><p>4.25上线的0.2.4就没问题喽。这个包，计院大三一门选修大课的大作业都会用到，所以我最早也觉得库没问题，比我厉害许多的那帮人都没提。不过学理工科的多少带点求真的性格，我反复确认自己的工作没问题之后就去质疑了。</p><p>当时状态很不好，因为其他事情上一直在失败，不停地犯错，真麻了，就哥们全身都是软的，只有嘴是硬的。毕设并不难，提bug也属于日常的小事，但这次很开心，一方面是提给我导，他是我偶像那种人。另一方面验证了我有些直觉是对的，恢复了些信心。</p><p>我非常敬仰我导，他非常严格认真地指导要求我和我舍友。嘿嘿，已经开始想念被他骂的感觉了。希望优秀的学弟们多联系他打比赛做项目什么的！</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> pre </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hexo d后Spawn failed报错解决方案</title>
       <link href="/2024/01/29/hexo-error/"/>
       <url>/2024/01/29/hexo-error/</url>
@@ -23,17 +61,6 @@
     
   
   
-    
-    
-    <entry>
-      <title>关于</title>
-      <link href="/movies/index.html"/>
-      <url>/movies/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
     
     
     <entry>
@@ -60,6 +87,17 @@
     
     <entry>
       <title>关于</title>
+      <link href="/movies/index.html"/>
+      <url>/movies/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于</title>
       <link href="/music/index.html"/>
       <url>/music/index.html</url>
       
@@ -73,6 +111,17 @@
       <title>tags</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
